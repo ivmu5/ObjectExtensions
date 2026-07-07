@@ -13,7 +13,7 @@ public static class ObjectExtensions
         {
             action(mainObject, i);
         }
-        
+
         return mainObject;
     }
 
