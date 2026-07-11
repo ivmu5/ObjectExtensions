@@ -5,13 +5,13 @@ public static class ObjectExtensions
     public static T For<T>(
         this T mainObject,
         int endIndex,
-        Action<T, int> action,
+        Action<int> action,
         int startIndex = 0,
         int step = 1)
     {
         for (int i = startIndex; i < endIndex; i += step)
         {
-            action(mainObject, i);
+            action(i);
         }
 
         return mainObject;
@@ -20,11 +20,11 @@ public static class ObjectExtensions
     public static T Foreach<T, TObj>(
         this T mainObject,
         IEnumerable<TObj> objects,
-        Action<T, TObj> action)
+        Action<TObj> action)
     {
         foreach (TObj curObject in objects)
         {
-            action(mainObject, curObject);
+            action(curObject);
         }
 
         return mainObject;
